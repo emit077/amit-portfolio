@@ -17,10 +17,12 @@
         </div>
       </div>
     </div>
-    <div class="text-center pl-4">
-      <h1>I build things for the web</h1>
+    <div class="text-center">
+      <h2 v-if="$vuetify.display.mobile">I build things for the web</h2>
+      <h1 v-else>I build things for the web</h1>
       <p>Web Developer | Backend Developer</p>
     </div>
+    <header-under-line :w1="5" :w2="170" :w3="30" />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -37,7 +39,7 @@
   line-height: 80%;
 }
 .site-header__title p:hover {
-  transform: scale(1.12);
+  // transform: scale(1.12);
 }
 .profile-image {
   width: 160px;
@@ -45,23 +47,24 @@
 
 @media screen and (max-width: 900px) {
   .site-header__title p:nth-of-type(2) {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     line-height: 80%;
   }
   .site-header__title p:first-of-type {
-    font-size: calc(3 * 1.5rem);
+    font-size: 5.5rem;
     line-height: 80%;
   }
   .profile-image {
-    width: 65px;
+    width: 80px;
   }
 }
 </style>
 
 <script>
+import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
 export default {
   name: "LandingScreen",
-  components: {},
+  components: { HeaderUnderLine },
   data: () => ({
     name_text: "Amit_Sahu",
     profile_image: require("@/assets/images/profile-assets/profile.png"),

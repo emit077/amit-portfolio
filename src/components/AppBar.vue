@@ -2,7 +2,15 @@
   <v-app-bar app elevation="0" fixed color="background">
     <v-spacer></v-spacer>
     <v-btn icon @click="toggleThemeColor">
-      <v-icon color="lightbulb"> mdi-lightbulb-on</v-icon>
+      <p
+        :title="
+          active_theme == 'theme_dark'
+            ? 'Switch on lights'
+            : 'Switch off lights'
+        "
+      >
+        <v-icon color="lightbulb"> mdi-lightbulb-on</v-icon>
+      </p>
     </v-btn>
   </v-app-bar>
 </template>
@@ -23,6 +31,10 @@ export default {
       this.setActiveTheme(
         this.active_theme == "theme_dark" ? "theme_light" : "theme_dark"
       );
+      this.$store.state.theme_loader = true;
+      setTimeout(() => {
+        this.$store.state.theme_loader = false;
+      }, 2700);
     },
   },
 };

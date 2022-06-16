@@ -1,5 +1,5 @@
 <template>
-  <div class="social-contact-sec">
+  <div class="social-contact-sec" v-if="!$vuetify.display.mobile">
     <div v-for="(item, i) in contact_list" :key="i">
       <a :href="item.link" target="_blank" class="">
         <img :src="item.image" alt="img" width="40"

@@ -21,8 +21,9 @@
   fill: none;
   height: 25px;
   cursor: pointer;
+  color: #00c0ff;
 }
 .project-grid__external-link:hover {
-  color: yellow;
+  color: blue;
 }
 </style>

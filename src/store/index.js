@@ -3,6 +3,7 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     active_theme: "theme_light",
+    theme_loader: false,
   },
   getters: {
     getActiveTheme: (state) => {

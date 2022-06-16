@@ -55,3 +55,27 @@
   transform-origin: bottom center;
   animation: pendulam 5s linear infinite;
 }
+
+@keyframes light_off {
+  100% {
+    color: #000;
+  }
+  50% {
+    color: #5f5e60;
+  }
+  0% {
+    color: #fff;
+  }
+}
+
+@keyframes light_on {
+  0% {
+    color: #000;
+  }
+  50% {
+    color: #5f5e60;
+  }
+  100% {
+    color: #fff;
+  }
+}
