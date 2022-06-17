@@ -1,28 +1,36 @@
 <template>
-  <div class="site-header">
-    <div class="d-flex justify-center pt-10">
-      <div class="pa-2">
-        <img
-          :src="profile_image"
-          alt="img"
-          class="profile-image hover-animate-pendulam-infinite"
-        />
-      </div>
-      <div class="pa-2">
-        <div class="text-center site-header__title">
-          <h1>
-            <p>Amit</p>
-            <p>Kumar Sahu</p>
-          </h1>
+  <div>
+    <div v-if="!$vuetify.display.mobile" class="circle-loader-position">
+      <LoaderCiercle />
+    </div>
+    <div v-if="!$vuetify.display.mobile" class="circle-watch-position">
+      <WatchCircle />
+    </div>
+    <div class="site-header">
+      <div class="d-flex justify-center pt-10">
+        <div class="pa-2">
+          <img
+            :src="profile_image"
+            alt="img"
+            class="profile-image hover-animate-pendulam-infinite"
+          />
+        </div>
+        <div class="pa-2">
+          <div class="text-center site-header__title">
+            <h1>
+              <p>Amit</p>
+              <p>Kumar Sahu</p>
+            </h1>
+          </div>
         </div>
       </div>
+      <div class="text-center">
+        <h2 v-if="$vuetify.display.mobile">I build things for the web</h2>
+        <h1 v-else>I build things for the web</h1>
+        <p>Web Developer | Backend Developer</p>
+      </div>
+      <header-under-line :w1="5" :w2="170" :w3="30" />
     </div>
-    <div class="text-center">
-      <h2 v-if="$vuetify.display.mobile">I build things for the web</h2>
-      <h1 v-else>I build things for the web</h1>
-      <p>Web Developer | Backend Developer</p>
-    </div>
-    <header-under-line :w1="5" :w2="170" :w3="30" />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -44,6 +52,17 @@
 .profile-image {
   width: 160px;
 }
+.circle-loader-position {
+  position: absolute;
+  left: -400px;
+  top: 300px;
+}
+.circle-watch-position {
+  position: absolute;
+  width: 200px;
+  right: 30px;
+  display: none;
+}
 
 @media screen and (max-width: 900px) {
   .site-header__title p:nth-of-type(2) {
@@ -62,9 +81,11 @@
 
 <script>
 import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
+import LoaderCiercle from "@/components/helper-components/LoaderCiercle.vue";
+import WatchCircle from "@/components/helper-components/WatchCircle.vue";
 export default {
   name: "LandingScreen",
-  components: { HeaderUnderLine },
+  components: { HeaderUnderLine, LoaderCiercle, WatchCircle },
   data: () => ({
     name_text: "Amit_Sahu",
     profile_image: require("@/assets/images/profile-assets/profile.png"),
