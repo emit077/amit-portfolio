@@ -5,23 +5,27 @@
     <!-- Provides the application the proper gutter -->
     <v-container>
       <div :class="$vuetify.display.mobile ? '' : 'px-15'">
-        <landing-screen />
-        <about-me />
-        <v-divider></v-divider>
-        <my-service />
-        <v-divider></v-divider>
-        <my-work />
-        <v-divider></v-divider>
-        <experiance-vue />
-        <v-divider></v-divider>
-        <contact-me />
+        <landing-screen></landing-screen>
+        <div v-for="(comp, i) in components_list" :key="i">
+          <div :class="i == 0 ? 'mb-15' : 'my-15'">
+            <div class="text-center pb-6 mb-10">
+              <span v-if="comp.card_subtitle">{{ comp.card_subtitle }}</span>
+              <h1 v-if="comp.card_title" class="card-title">
+                {{ comp.card_title }}
+              </h1>
+              <header-under-line
+                v-if="comp.line_width"
+                :w1="comp.line_width[0]"
+                :w2="comp.line_width[1]"
+                :w3="comp.line_width[2]"
+              />
+            </div>
+            <component :is="comp.component_name"></component>
+          </div>
+          <v-divider></v-divider>
+        </div>
       </div>
       <social-profile />
-
-      <!-- <experiance-vue /> -->
-      <!-- <test-vue /> -->
-      <!-- If using vue-router -->
-      <!--      <router-view></router-view>-->
     </v-container>
   </v-main>
   <footer-vue />
@@ -60,6 +64,7 @@ import SocialProfile from "@/components/SocialProfile.vue";
 import ExperianceVue from "@/components/Experiance.vue";
 import MyService from "@/components/MyService.vue";
 import FooterVue from "@/components/Footer.vue";
+import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
 // import TestVue from "@/components/Test.vue";
 
 export default defineComponent({
@@ -74,7 +79,42 @@ export default defineComponent({
     ExperianceVue,
     MyService,
     FooterVue,
-    // TestVue,
+    HeaderUnderLine,
   },
+  data: () => ({
+    components_list: [
+      {
+        component_name: "about-me",
+        line_width: [130, 20, 5],
+        card_title: "About me",
+        card_subtitle: "Let me tell you",
+      },
+      {
+        component_name: "my-service",
+        line_width: [90, 5, 30],
+        card_title: "Services",
+        card_subtitle: "What I will do for you",
+      },
+      {
+        component_name: "my-work",
+        line_width: [90, 5, 30],
+        card_title: "Projects",
+        card_subtitle: "Some of my recent",
+      },
+      {
+        component_name: "experiance-vue",
+        line_width: [190, 5, 60],
+        card_title: "Where I’ve Worked",
+        card_subtitle: "",
+      },
+      {
+        component_name: "contact-me",
+        line_width: [130, 20, 5],
+        card_title: "Get In Touch",
+        card_subtitle: "What Next?",
+      },
+    ],
+    //
+  }),
 });
 </script>

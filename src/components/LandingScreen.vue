@@ -18,6 +18,8 @@
       <div
         class="d-flex justify-center"
         :class="$vuetify.display.mobile ? '' : ' pt-10'"
+        data-aos="zoom-in-down"
+        data-aos-duration="2000"
       >
         <div class="pa-2">
           <img
@@ -36,12 +38,19 @@
           </div>
         </div>
       </div>
-      <div class="text-center">
+      <div class="text-center" data-aos="fade-up">
         <h2 v-if="$vuetify.display.mobile">I build things for the web</h2>
         <h1 v-else>I build things for the web</h1>
         <p>Web Developer | Backend Developer</p>
       </div>
-      <header-under-line :w1="5" :w2="170" :w3="30" />
+      <header-under-line
+        :w1="5"
+        :w2="170"
+        :w3="30"
+        data-aos="slide-right"
+        data-aos-easing="linear"
+        data-aos-duration="1000"
+      />
     </div>
   </div>
 </template>

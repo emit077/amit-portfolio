@@ -1,10 +1,5 @@
 <template>
-  <div class="pt-15">
-    <div class="text-center pb-6 mb-6">
-      <span> What Next?</span>
-      <h1 class="card-title">{{ card_title }}</h1>
-      <header-under-line />
-    </div>
+  <div>
     <div v-if="$vuetify.display.mobile" class="mobile-view">
       <div class="container-card mb-15" style="height: 250px">
         <v-hover v-slot="{ props }">
@@ -137,12 +132,8 @@
 }
 </style>
 <script>
-import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
 export default {
   name: "ContactMe",
-  components: {
-    HeaderUnderLine,
-  },
   data: () => ({
     card_title: "Get In Touch",
   }),

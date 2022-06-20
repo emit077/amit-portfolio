@@ -1,38 +1,30 @@
 <template>
-  <div class="my-15">
-    <div class="text-center pb-6 mb-10">
-      <!-- <span>Let me tell you</span> -->
-      <h1 class="card-title">{{ card_title }}</h1>
-      <header-under-line :w1="190" :w2="5" :w3="60" />
-    </div>
-
-    <!-- timeline -->
-    <v-timeline density="compact" truncate-line="start" align="start">
-      <template v-for="(item, i) in experices_list" :key="i">
-        <v-timeline-item size="small">
-          <template v-slot:icon>
-            <img
-              :src="item.image"
-              alt=""
-              width="30"
-              class="org__img elevation-3"
-            />
-          </template>
-          <v-card class="elevation-5 px-5 py-3 experince-card">
-            <h2 class="org_name">{{ item.org_name }}</h2>
-            <h4 class="mb-0">
-              {{ item.designation }} <small>({{ item.duration }})</small>
-            </h4>
-            <v-card-text class="work-hilight bg-transparent px-4 pb-0">
-              <ul>
-                <li v-for="(hl, i) in item.hilights" :key="i">{{ hl }}</li>
-              </ul>
-            </v-card-text>
-          </v-card>
-        </v-timeline-item>
-      </template>
-    </v-timeline>
-  </div>
+  <!-- timeline -->
+  <v-timeline density="compact" truncate-line="start" align="start">
+    <template v-for="(item, i) in experices_list" :key="i">
+      <v-timeline-item size="small">
+        <template v-slot:icon>
+          <img
+            :src="item.image"
+            alt=""
+            width="30"
+            class="org__img elevation-3"
+          />
+        </template>
+        <v-card class="elevation-5 px-5 py-3 experince-card">
+          <h2 class="org_name">{{ item.org_name }}</h2>
+          <h4 class="mb-0">
+            {{ item.designation }} <small>({{ item.duration }})</small>
+          </h4>
+          <v-card-text class="work-hilight bg-transparent px-4 pb-0">
+            <ul>
+              <li v-for="(hl, i) in item.hilights" :key="i">{{ hl }}</li>
+            </ul>
+          </v-card-text>
+        </v-card>
+      </v-timeline-item>
+    </template>
+  </v-timeline>
 </template>
 <style lang="scss" scoped>
 .org_name {
@@ -74,11 +66,8 @@
 </style>
 
 <script>
-import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
-
 export default {
   name: "ExperianceVue",
-  components: { HeaderUnderLine },
   data: () => ({
     card_title: "Where I’ve Worked",
     experices_list: [

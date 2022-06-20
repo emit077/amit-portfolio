@@ -1,10 +1,5 @@
 <template>
-  <div class="py-15">
-    <div class="text-center pb-6 mb-10">
-      <span>What I will do for you</span>
-      <h1 class="card-title">{{ card_title }}</h1>
-      <header-under-line :w1="90" :w2="5" :w3="30" />
-    </div>
+  <div>
     <v-row class="mb-6" justify="center">
       <v-col
         cols="12"
@@ -40,11 +35,7 @@
 }
 </style>
 <script>
-import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
-// import CardGrid from "@/components/project-card-template/CardGrid.vue";
-
 export default {
-  components: { HeaderUnderLine },
   name: "MyWork",
   data: () => ({
     card_title: "Services",

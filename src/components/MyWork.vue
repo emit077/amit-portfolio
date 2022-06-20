@@ -1,31 +1,22 @@
 <template>
-  <div class="py-15">
-    <div class="text-center pb-6 mb-10">
-      <span>Some of my recent</span>
-      <h1 class="card-title">{{ card_title }}</h1>
-      <header-under-line :w1="90" :w2="5" :w3="30" />
-    </div>
-    <v-row justify="center">
-      <v-col
-        cols="12"
-        md="6"
-        v-for="(project, i) in poject_list_data"
-        :key="i"
-        class="mb-4"
-      >
-        <FlipCard3D :project="project"></FlipCard3D>
-      </v-col>
-    </v-row>
-  </div>
+  <v-row justify="center">
+    <v-col
+      cols="12"
+      md="6"
+      v-for="(project, i) in poject_list_data"
+      :key="i"
+      class="mb-4"
+    >
+      <FlipCard3D :project="project"></FlipCard3D>
+    </v-col>
+  </v-row>
 </template>
 <style lang="scss" scoped></style>
 <script>
-import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
-// import CardGrid from "@/components/project-card-template/CardGrid.vue";
 import FlipCard3D from "@/components/project-card-template/FlipCard3D";
 
 export default {
-  components: { HeaderUnderLine, FlipCard3D },
+  components: { FlipCard3D },
   name: "MyWork",
   data: () => ({
     card_title: "Projects",

@@ -4,6 +4,7 @@
       v-for="(item, i) in contact_list"
       :key="i"
       class="social-cont mt-5 pa-1"
+      data-aos="slide-left"
     >
       <a :href="item.link" target="_blank" class="">
         <v-icon class="social-icon" size="32">{{ item.icon }}</v-icon>
@@ -39,6 +40,8 @@
 }
 </style>
 <script>
+// import { onMounted } from "vue";
+
 export default {
   name: "MyWork",
   data: () => ({
@@ -62,6 +65,7 @@ export default {
     ],
     //
   }),
+  created() {},
   methods: {
     //
   },
