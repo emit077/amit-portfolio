@@ -51,10 +51,10 @@ export default {
         icon: "mdi-linkedin",
         link: "https://www.linkedin.com/in/amit-kumar-sahu-705a06137",
       },
-      // {
-      //   icon: "mdi-facebook",
-      //   link: "https://www.facebook.com/emit.sahu/about",
-      // },
+      {
+        icon: "mdi-stack-overflow",
+        link: "https://stackoverflow.com/users/10175889/amit",
+      },
       {
         icon: "mdi-instagram",
         link: "https://www.instagram.com/emit077/",

@@ -139,6 +139,11 @@
   font-family: "Montserrat";
   font-weight: 300;
 }
+.link-btn {
+  position: absolute;
+  bottom: -15px;
+  right: 20px;
+}
 </style>
 
 <template>
@@ -155,6 +160,14 @@
               >#{{ tech }}</small
             >
           </div>
+          <a
+            v-if="$vuetify.display.mobile"
+            :href="project.working_link"
+            target="_blank"
+            class="link-btn"
+          >
+            <external-link-btn />
+          </a>
         </div>
       </div>
       <div
@@ -163,13 +176,23 @@
       >
         <div class="inner">
           <p>{{ project.description }}</p>
+          <a
+            v-if="!$vuetify.display.mobile"
+            :href="project.working_link"
+            target="_blank"
+            class="link-btn"
+          >
+            <external-link-btn />
+          </a>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import ExternalLinkBtn from "../helper-components/ExternalLinkBtn.vue";
 export default {
+  components: { ExternalLinkBtn },
   name: "FlipCard3D",
   props: ["project"],
   data: () => ({}),
