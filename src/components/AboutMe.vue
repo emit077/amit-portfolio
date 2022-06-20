@@ -6,7 +6,7 @@
       <header-under-line />
     </div>
     <div v-if="$vuetify.display.mobile" class="mobile-view">
-      <div class="container-card mb-15" style="height: 400px">
+      <div class="container-card mb-15" style="height: 500px">
         <v-hover v-slot="{ props }">
           <div
             class="mx-auto pro_img_container h-100"
@@ -19,7 +19,6 @@
               <v-expand-transition>
                 <div
                   class="d-flex transition-fast-in-fast-out v-card--reveal pa-3 font-bold about-text-aa bg-bgtext"
-                  style="height: 400px"
                 >
                   <p>
                     Hello! My name is Amit Kumar Sahu. I'm software developer

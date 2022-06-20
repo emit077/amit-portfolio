@@ -1,11 +1,11 @@
 <template>
   <div class="py-15">
-    <div class="text-center py-6 mb-10">
+    <div class="text-center pb-6 mb-10">
       <span>Some of my recent</span>
       <h1 class="card-title">{{ card_title }}</h1>
       <header-under-line :w1="90" :w2="5" :w3="30" />
     </div>
-    <v-row class="mb-6">
+    <v-row justify="center">
       <v-col
         cols="12"
         md="6"

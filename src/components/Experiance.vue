@@ -1,6 +1,6 @@
 <template>
   <div class="my-15">
-    <div class="text-center py-6 mb-10">
+    <div class="text-center pb-6 mb-10">
       <!-- <span>Let me tell you</span> -->
       <h1 class="card-title">{{ card_title }}</h1>
       <header-under-line :w1="190" :w2="5" :w3="60" />

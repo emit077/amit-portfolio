@@ -7,6 +7,7 @@
       <div :class="$vuetify.display.mobile ? '' : 'px-15'">
         <landing-screen />
         <about-me />
+        <v-divider></v-divider>
         <my-service />
         <v-divider></v-divider>
         <my-work />
