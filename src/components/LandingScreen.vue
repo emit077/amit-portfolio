@@ -1,17 +1,29 @@
 <template>
   <div>
-    <div v-if="!$vuetify.display.mobile" class="circle-loader-position">
+    <!-- <div v-if="!$vuetify.display.mobile" class="circle-loader-position">
       <LoaderCiercle />
     </div>
     <div v-if="!$vuetify.display.mobile" class="circle-watch-position">
       <WatchCircle />
-    </div>
+    </div> -->
     <div class="site-header">
-      <div class="d-flex justify-center pt-10">
+      <div class="text-center">
+        <img
+          :src="profile_image"
+          alt="img"
+          v-if="$vuetify.display.mobile"
+          class="profile-image hover-animate-pendulam-infinite"
+        />
+      </div>
+      <div
+        class="d-flex justify-center"
+        :class="$vuetify.display.mobile ? '' : ' pt-10'"
+      >
         <div class="pa-2">
           <img
             :src="profile_image"
             alt="img"
+            v-if="!$vuetify.display.mobile"
             class="profile-image hover-animate-pendulam-infinite"
           />
         </div>
@@ -65,27 +77,36 @@
 }
 
 @media screen and (max-width: 900px) {
+  .site-header {
+    min-height: 95vh;
+    padding-top: 5vh;
+  }
   .site-header__title p:nth-of-type(2) {
-    font-size: 2.2rem;
+    font-size: 3rem;
     line-height: 80%;
   }
   .site-header__title p:first-of-type {
-    font-size: 5.5rem;
+    font-size: 7.6rem;
     line-height: 80%;
   }
   .profile-image {
-    width: 80px;
+    width: 150px;
+    display: inline;
   }
 }
 </style>
 
 <script>
 import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
-import LoaderCiercle from "@/components/helper-components/LoaderCiercle.vue";
-import WatchCircle from "@/components/helper-components/WatchCircle.vue";
+// import LoaderCiercle from "@/components/helper-components/LoaderCiercle.vue";
+// import WatchCircle from "@/components/helper-components/WatchCircle.vue";
 export default {
   name: "LandingScreen",
-  components: { HeaderUnderLine, LoaderCiercle, WatchCircle },
+  components: {
+    HeaderUnderLine,
+    //  LoaderCiercle,
+    //  WatchCircle
+  },
   data: () => ({
     name_text: "Amit_Sahu",
     profile_image: require("@/assets/images/profile-assets/profile.png"),

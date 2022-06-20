@@ -1,9 +1,13 @@
 <template>
   <div class="social-contact-sec" v-if="!$vuetify.display.mobile">
-    <div v-for="(item, i) in contact_list" :key="i">
+    <div
+      v-for="(item, i) in contact_list"
+      :key="i"
+      class="social-cont mt-5 pa-1"
+    >
       <a :href="item.link" target="_blank" class="">
-        <img :src="item.image" alt="img" width="40"
-      /></a>
+        <v-icon class="social-icon" size="32">{{ item.icon }}</v-icon>
+      </a>
     </div>
   </div>
 </template>
@@ -11,19 +15,27 @@
 .social-contact-sec {
   position: fixed;
   background: transparent;
-  bottom: 20px;
+  top: 80px;
   right: 40px;
+
+  .social-cont {
+    background-color: transparent;
+    border-radius: 10px;
+    border: solid 1.5px #ffffff;
+    transition-duration: 1s;
+  }
+
+  .social-icon {
+    color: white;
+  }
+
+  .social-cont:hover {
+    transform: scale(1.23);
+  }
 }
+
 .social-contact-sec a {
   text-decoration: none;
-}
-.social-contact-sec img {
-  -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(70%);
-}
-.social-contact-sec img:hover {
-  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(0%);
 }
 </style>
 <script>
@@ -32,20 +44,20 @@ export default {
   data: () => ({
     contact_list: [
       {
-        image: require("@/assets/images/contact/github.svg"),
-        link: "https://www.facebook.com/emit.sahu/about",
+        icon: "mdi-github",
+        link: "https://github.com/emit077",
       },
       {
-        image: require("@/assets/images/contact/linkedin.svg"),
+        icon: "mdi-linkedin",
         link: "https://www.linkedin.com/in/amit-kumar-sahu-705a06137",
       },
+      // {
+      //   icon: "mdi-facebook",
+      //   link: "https://www.facebook.com/emit.sahu/about",
+      // },
       {
-        image: require("@/assets/images/contact/fb.svg"),
-        link: "https://www.facebook.com/emit.sahu/about",
-      },
-      {
-        image: require("@/assets/images/contact/insta.svg"),
-        link: "https://www.facebook.com/emit.sahu/about",
+        icon: "mdi-instagram",
+        link: "https://www.instagram.com/emit077/",
       },
     ],
     //

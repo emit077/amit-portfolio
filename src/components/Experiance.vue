@@ -5,14 +5,11 @@
       <h1 class="card-title">{{ card_title }}</h1>
       <header-under-line :w1="190" :w2="5" :w3="60" />
     </div>
-    <!--  Small Screen -->
-    <div v-if="$vuetify.display.mobile" class="mobile-view">
-      <v-timeline density="compact" truncate-line="start" align="start">
-        <v-timeline-item
-          v-for="(item, i) in experices_list"
-          :key="i"
-          size="x-small"
-        >
+
+    <!-- timeline -->
+    <v-timeline density="compact" truncate-line="start" align="start">
+      <template v-for="(item, i) in experices_list" :key="i">
+        <v-timeline-item size="small">
           <template v-slot:icon>
             <img
               :src="item.image"
@@ -21,83 +18,25 @@
               class="org__img elevation-3"
             />
           </template>
-          <div class="text-left">
-            <h4>{{ item.org_name }}</h4>
-            <h5 class="mb-0">
-              {{ item.designation }}
-              <small style="font-weight: 500">({{ item.duration }})</small>
-            </h5>
-            <v-card-text class="work-hilight bg-bgtext text-opacity-7 pa-1">
+          <v-card class="elevation-5 px-5 py-3 bg-transparent experince-card">
+            <h2 class="org_name">{{ item.org_name }}</h2>
+            <h4 class="mb-0">
+              {{ item.designation }} <small>({{ item.duration }})</small>
+            </h4>
+            <v-card-text class="work-hilight bg-transparent px-4 pb-0">
               <ul>
                 <li v-for="(hl, i) in item.hilights" :key="i">{{ hl }}</li>
               </ul>
             </v-card-text>
-          </div>
+          </v-card>
         </v-timeline-item>
-      </v-timeline>
-    </div>
-    <!-- Large Screen  -->
-    <div v-else>
-      <v-timeline truncate-line="start" align="start">
-        <template v-for="(item, i) in experices_list" :key="i">
-          <v-timeline-item size="small" v-if="i % 2 == 0">
-            <template v-slot:icon>
-              <img
-                :src="item.image"
-                alt=""
-                width="30"
-                class="org__img elevation-3"
-              />
-            </template>
-            <template v-slot:opposite>
-              <div class="text-left">
-                <h4 class="org_name">{{ item.org_name }}</h4>
-                <small>({{ item.duration }})</small>
-              </div>
-            </template>
-            <v-card class="elevation-2 pa-3 bg-bgtext">
-              <h4 class="mb-0">{{ item.designation }}</h4>
-              <v-card-text class="work-hilight bg-bgtext text-opacity-7 pt-1">
-                <ul>
-                  <li v-for="(hl, i) in item.hilights" :key="i">{{ hl }}</li>
-                </ul>
-              </v-card-text>
-            </v-card>
-          </v-timeline-item>
-          <v-timeline-item size="small" v-else>
-            <template v-slot:icon>
-              <img
-                :src="item.image"
-                alt=""
-                width="30"
-                class="org__img elevation-3"
-              />
-            </template>
-            <template v-slot:opposite>
-              <v-card class="elevation-2 pa-3 bg-bgtext">
-                <h4 class="mb-0">{{ item.designation }}</h4>
-                <v-card-text class="work-hilight bg-bgtext text-opacity-7 pt-1">
-                  <ul>
-                    <li v-for="(hl, i) in item.hilights" :key="i">
-                      {{ hl }}
-                    </li>
-                  </ul>
-                </v-card-text>
-              </v-card>
-            </template>
-            <div class="text-left">
-              <h4 class="org_name">{{ item.org_name }}</h4>
-              <small>({{ item.duration }})</small>
-            </div>
-          </v-timeline-item>
-        </template>
-      </v-timeline>
-    </div>
+      </template>
+    </v-timeline>
   </div>
 </template>
 <style lang="scss" scoped>
 .org_name {
-  white-space: break-spaces;
+  // white-space: break-spaces;
 }
 .org__img {
   width: 30px;
@@ -121,6 +60,24 @@
     padding-left: 10px;
     font-size: 15px;
   }
+}
+.experince-card {
+  border-radius: 10px;
+}
+.experince-card:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: block;
+  opacity: 0.2;
+  background-color: #fff;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
 }
 </style>
 <style>

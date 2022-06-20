@@ -1,265 +1,31 @@
 <template>
-  <div class="my-15">
-    <div class="text-center pb-6">
+  <div class="py-15">
+    <div class="text-center py-6 mb-10">
       <span>Some of my recent</span>
       <h1 class="card-title">{{ card_title }}</h1>
       <header-under-line :w1="90" :w2="5" :w3="30" />
     </div>
-
-    <div v-if="$vuetify.display.mobile" class="mobile-view">
-      <v-card
-        class="mx-auto bg-bgtext mt-6"
+    <v-row class="mb-6">
+      <v-col
+        cols="12"
+        md="6"
         v-for="(project, i) in poject_list_data"
         :key="i"
+        class="mb-4"
       >
-        <v-img
-          class="align-end text-white"
-          height="200"
-          :src="project.image"
-          cover
-        >
-        </v-img>
-        <div class="px-2"><v-divider></v-divider></div>
-        <v-card-text class="bg-bgtext">
-          <div class="text-right float-right pr-2" v-if="project.working_link">
-            <a
-              :href="project.working_link"
-              class="__external_links"
-              target="_blank"
-            >
-              <external-link-btn />
-            </a>
-          </div>
-          <v-card-title class="py-0 px-0">{{ project.title }}</v-card-title>
-
-          <p>{{ project.description }}</p>
-          <div class="mt-2 text-right">
-            <small
-              class="pr-2 text-opacity-8"
-              v-for="(tech, j) in project.tech_stack"
-              :key="j"
-              >#{{ tech }}</small
-            >
-          </div>
-        </v-card-text>
-      </v-card>
-    </div>
-    <div v-else>
-      <div class="pt-10">
-        <div v-for="(project, i) in poject_list_data" :key="i">
-          <div class="left-project-grid mb-15" v-if="(i + 1) % 2 == 0">
-            <div class="__content">
-              <h2 class="__title">{{ project.title }}</h2>
-              <v-hover v-slot="{ isHovering, props }">
-                <v-card
-                  class="__description_box pa-4 bg-bgtext"
-                  :elevation="isHovering ? 4 : 2"
-                  v-bind="props"
-                >
-                  <p>{{ project.description }}</p>
-                </v-card>
-              </v-hover>
-              <div class="mt-2">
-                <span
-                  class="pr-2 text-opacity-8"
-                  v-for="(tech, j) in project.tech_stack"
-                  :key="j"
-                  >#{{ tech }}</span
-                >
-              </div>
-              <div class="mt-3" v-if="project.working_link">
-                <a
-                  :href="project.working_link"
-                  class="__external_links"
-                  target="_blank"
-                >
-                  <external-link-btn />
-                </a>
-              </div>
-            </div>
-            <div class="__img">
-              <v-hover v-slot="{ props }">
-                <div
-                  class="mx-auto pro_img_container"
-                  color="grey-lighten-4"
-                  v-bind="props"
-                >
-                  <v-img cover :src="project.image" class="" width="100%">
-                    <v-expand-transition>
-                      <div
-                        class="d-flex transition-fast-in-fast-out v-card--reveal text-h2 text-white"
-                        style="height: 100%"
-                      >
-                        {{ project.title }}
-                      </div>
-                    </v-expand-transition>
-                  </v-img>
-                </div>
-              </v-hover>
-            </div>
-          </div>
-          <div v-else class="right-project-grid mb-15">
-            <div class="__img">
-              <v-hover v-slot="{ props }">
-                <div class="mx-auto" color="grey-lighten-4" v-bind="props">
-                  <v-img cover :src="project.image" width="100%">
-                    <v-expand-transition>
-                      <div
-                        class="d-flex transition-fast-in-fast-out v-card--reveal text-h2 text-white"
-                        style="height: 100%"
-                      >
-                        {{ project.title }}
-                      </div>
-                    </v-expand-transition>
-                  </v-img>
-                </div>
-              </v-hover>
-            </div>
-            <div class="__content">
-              <h2 class="__title text-right">{{ project.title }}</h2>
-              <v-hover v-slot="{ isHovering, props }">
-                <v-card
-                  class="__description_box pa-4 bg-bgtext"
-                  :elevation="isHovering ? 4 : 2"
-                  v-bind="props"
-                >
-                  <p>{{ project.description }}</p>
-                </v-card>
-              </v-hover>
-              <div class="mt-3 text-right">
-                <span
-                  class="pr-2 text-opacity-8"
-                  v-for="(tech, j) in project.tech_stack"
-                  :key="j"
-                  >#{{ tech }}</span
-                >
-              </div>
-              <div class="mt-3 text-right" v-if="project.working_link">
-                <a
-                  :href="project.working_link"
-                  class="__external_links"
-                  target="_blank"
-                >
-                  <external-link-btn />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <FlipCard3D :project="project"></FlipCard3D>
+      </v-col>
+    </v-row>
   </div>
 </template>
-<style lang="scss" scoped>
-.project-list {
-  list-style: none;
-}
-.left-project-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  -moz-box-align: center;
-  align-items: center;
-  gap: 10px;
-  background-color: transparent;
-
-  .__content {
-    position: relative;
-    grid-area: 1 / 1 / -1 / 7;
-    z-index: 1;
-  }
-  .__img {
-    box-shadow: 0 10px 30px -15px var(--navy-shadow);
-    transition: var(--transition);
-    grid-area: 1 / 6 / -1 / -1;
-    position: relative;
-  }
-
-  @media screen and (max-width: 900px) {
-    .__content {
-      grid-column: 1/-1;
-      opacity: 0.4;
-    }
-    .__img {
-      grid-column: 1/-1;
-      background-image: url(../assets/images/projects/ip.png);
-      background-position: top center;
-      background-size: cover;
-      .pro_img_container {
-        display: none;
-      }
-    }
-  }
-}
-
-.right-project-grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  -moz-box-align: center;
-  align-items: center;
-  gap: 10px;
-  background-color: transparent;
-
-  .__img {
-    position: relative;
-    grid-area: 1 / 6 / -1 / -1;
-    grid-column: 1 / 8;
-    // grid-area: 1 / 1 / -1 / 7;
-  }
-  .__content {
-    box-shadow: 0 10px 30px -15px var(--navy-shadow);
-    transition: var(--transition);
-    grid-area: 1 / 1 / -1 / 7;
-    grid-column: 7 / -1;
-    position: relative;
-    z-index: 1;
-  }
-
-  @media screen and (max-width: 900px) {
-    .__content {
-      grid-column: 1/-1;
-      opacity: 0.4;
-    }
-    .__img {
-      grid-column: 1/-1;
-    }
-  }
-}
-
-.__description_box {
-  // background-color: transparent;
-  font-size: 16px;
-  p {
-    opacity: 0.8;
-  }
-}
-.v-card--reveal {
-  align-items: center;
-  top: 0;
-  justify-content: center;
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
-  background-color: #000;
-}
-.__external-link {
-  fill: none;
-  height: 25px;
-  cursor: pointer;
-}
-.__external-link:hover {
-  color: yellow;
-}
-.__external_links {
-  text-decoration: none !important;
-}
-</style>
+<style lang="scss" scoped></style>
 <script>
-import ExternalLinkBtn from "./helper-components/ExternalLinkBtn.vue";
 import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
+// import CardGrid from "@/components/project-card-template/CardGrid.vue";
+import FlipCard3D from "@/components/project-card-template/FlipCard3D";
+
 export default {
-  components: { ExternalLinkBtn, HeaderUnderLine },
+  components: { HeaderUnderLine, FlipCard3D },
   name: "MyWork",
   data: () => ({
     card_title: "Projects",

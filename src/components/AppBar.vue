@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app elevation="0" fixed color="background">
+  <v-app-bar app elevation="0" fixed color="transparent">
     <v-spacer></v-spacer>
     <v-btn icon @click="toggleThemeColor">
       <p

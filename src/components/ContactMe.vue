@@ -1,6 +1,6 @@
 <template>
-  <div class="mb-15">
-    <div class="text-center mb-6">
+  <div class="py-15">
+    <div class="text-center py-6 mb-6">
       <span> What Next?</span>
       <h1 class="card-title">{{ card_title }}</h1>
       <header-under-line />
@@ -88,6 +88,7 @@
   font-size: 15rem;
   font-weight: bolder;
   opacity: 0.1;
+  line-height: 90%;
 }
 .about-text-aa {
   font-size: 18px;

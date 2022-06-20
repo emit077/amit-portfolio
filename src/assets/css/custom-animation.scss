@@ -52,6 +52,10 @@
 }
 
 .hover-animate-pendulam-infinite:hover {
+  animation: none;
+}
+.hover-animate-pendulam-infinite {
+  transition-duration: 5s;
   transform-origin: bottom center;
   animation: pendulam 5s linear infinite;
 }

@@ -1,15 +1,18 @@
 <template>
   <app-bar></app-bar>
   <!-- Sizes your content based upon application components -->
-  <v-main color="background" class="h-100">
+  <v-main color="background" class="h-100 custom-class">
     <!-- Provides the application the proper gutter -->
     <v-container class="h-100">
       <div :class="$vuetify.display.mobile ? '' : 'px-15'">
         <landing-screen />
         <about-me />
+        <my-service />
+        <v-divider></v-divider>
         <my-work />
+        <v-divider></v-divider>
         <experiance-vue />
-
+        <v-divider></v-divider>
         <contact-me />
       </div>
       <social-profile />
@@ -23,8 +26,22 @@
 </template>
 <style lang="scss">
 .custom-class {
-  background: rgb(var(--v-theme-background));
-  color: rgba(var(--v-theme-on-background), 0.6) !important;
+  // background: linear-gradient(to bottom, #70e1f5, #ffd194);
+  background-image: linear-gradient(
+    to left top,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
 }
 .card-title {
   line-height: 95%;
@@ -39,6 +56,7 @@ import MyWork from "@/components/MyWork.vue";
 import AboutMe from "@/components/AboutMe.vue";
 import SocialProfile from "@/components/SocialProfile.vue";
 import ExperianceVue from "@/components/Experiance.vue";
+import MyService from "@/components/MyService.vue";
 // import TestVue from "@/components/Test.vue";
 
 export default defineComponent({
@@ -51,6 +69,7 @@ export default defineComponent({
     MyWork,
     SocialProfile,
     ExperianceVue,
+    MyService,
     // TestVue,
   },
 });
