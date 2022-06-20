@@ -74,7 +74,7 @@ export default {
       {
         title: "Rawfit",
         description:
-          "Rawfit is subscription Base booking and helth monitoring system for a Rawfit User",
+          "Rawfit is subscription Based helth monitoring system based on google fit. Which also provide service to book a activity sesson.",
         image: require("@/assets/images/projects/rawfit.png"),
         working_link: "https://rawfit.in",
         tech_stack: ["Django", "python", "Vuejs", "HTML", "SCSS"],

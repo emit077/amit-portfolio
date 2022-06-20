@@ -9,7 +9,7 @@
             : 'Switch off lights'
         "
       >
-        <v-icon color="lightbulb"> mdi-lightbulb-on</v-icon>
+        <!-- <v-icon color="lightbulb"> mdi-lightbulb-on</v-icon> -->
       </p>
     </v-btn>
   </v-app-bar>

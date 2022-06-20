@@ -1,9 +1,9 @@
 <template>
   <app-bar></app-bar>
   <!-- Sizes your content based upon application components -->
-  <v-main color="background" class="h-100 custom-class">
+  <v-main color="background" class="custom-class">
     <!-- Provides the application the proper gutter -->
-    <v-container class="h-100">
+    <v-container>
       <div :class="$vuetify.display.mobile ? '' : 'px-15'">
         <landing-screen />
         <about-me />
@@ -23,6 +23,7 @@
       <!--      <router-view></router-view>-->
     </v-container>
   </v-main>
+  <footer-vue />
 </template>
 <style lang="scss">
 .custom-class {
@@ -57,6 +58,7 @@ import AboutMe from "@/components/AboutMe.vue";
 import SocialProfile from "@/components/SocialProfile.vue";
 import ExperianceVue from "@/components/Experiance.vue";
 import MyService from "@/components/MyService.vue";
+import FooterVue from "@/components/Footer.vue";
 // import TestVue from "@/components/Test.vue";
 
 export default defineComponent({
@@ -70,6 +72,7 @@ export default defineComponent({
     SocialProfile,
     ExperianceVue,
     MyService,
+    FooterVue,
     // TestVue,
   },
 });

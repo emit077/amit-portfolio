@@ -141,7 +141,7 @@
 }
 .link-btn {
   position: absolute;
-  bottom: -15px;
+  bottom: -8;
   right: 20px;
 }
 </style>

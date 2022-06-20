@@ -1,5 +1,5 @@
 <template>
-  <div class="py-15">
+  <div class="pt-15">
     <div class="text-center py-6 mb-6">
       <span> What Next?</span>
       <h1 class="card-title">{{ card_title }}</h1>
