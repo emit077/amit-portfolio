@@ -9,9 +9,10 @@
             alt=""
             width="30"
             class="org__img elevation-3"
+            data-aos="fade-up"
           />
         </template>
-        <v-card class="elevation-5 px-5 py-3 experince-card">
+        <v-card data-aos="fade-up" class="elevation-5 px-5 py-3 experince-card">
           <h2 class="org_name">{{ item.org_name }}</h2>
           <h4 class="mb-0">
             {{ item.designation }} <small>({{ item.duration }})</small>

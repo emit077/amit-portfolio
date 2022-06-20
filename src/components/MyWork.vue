@@ -7,7 +7,10 @@
       :key="i"
       class="mb-4"
     >
-      <FlipCard3D :project="project"></FlipCard3D>
+      <FlipCard3D
+        :project="project"
+        :data-aos="i % 2 == 0 ? 'slide-left' : 'slide-right'"
+      ></FlipCard3D>
     </v-col>
   </v-row>
 </template>

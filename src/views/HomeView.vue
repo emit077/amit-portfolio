@@ -8,7 +8,11 @@
         <landing-screen></landing-screen>
         <div v-for="(comp, i) in components_list" :key="i">
           <div :class="i == 0 ? 'mb-15' : 'my-15'">
-            <div class="text-center pb-6 mb-10">
+            <div
+              class="text-center pb-6 mb-10"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+            >
               <span v-if="comp.card_subtitle">{{ comp.card_subtitle }}</span>
               <h1 v-if="comp.card_title" class="card-title">
                 {{ comp.card_title }}
@@ -18,6 +22,9 @@
                 :w1="comp.line_width[0]"
                 :w2="comp.line_width[1]"
                 :w3="comp.line_width[2]"
+                data-aos="slide-left"
+                data-aos-easing="linear"
+                data-aos-duration="500"
               />
             </div>
             <component :is="comp.component_name"></component>

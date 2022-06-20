@@ -12,11 +12,18 @@
           class="bg-white service-card mt-5 px-4 pb-4 h-100 text-center"
           outline
           elevation="5"
+          data-aos="slide-up"
         >
           <div
             :class="$vuetify.display.mobile ? 'text-center' : 'text-left ml-3'"
           >
-            <v-avatar :color="service.bg_color" size="90" class="mt-n11">
+            <v-avatar
+              :color="service.bg_color"
+              size="90"
+              class="mt-n11"
+              data-aos="zoom-in"
+              data-aos-duration="3000"
+            >
               <v-icon color="#000" size="45">{{ service.icon }}</v-icon>
             </v-avatar>
           </div>

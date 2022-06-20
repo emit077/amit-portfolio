@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-aos="zoom-in-up">
     <div v-if="$vuetify.display.mobile" class="mobile-view">
       <div class="container-card mb-15" style="height: 250px">
         <v-hover v-slot="{ props }">
