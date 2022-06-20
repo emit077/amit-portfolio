@@ -1,0 +1,22 @@
+.text-opacity-7 {
+  opacity: 1;
+}
+.fs-18 {
+  font-size: 18px !important;
+}
+.fs-16 {
+  font-size: 18px !important;
+}
+
+p {
+  font-size: 1.3rem;
+}
+.fw-400 {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 900px) {
+  p {
+    font-size: 1rem;
+  }
+}

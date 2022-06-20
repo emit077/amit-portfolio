@@ -61,7 +61,7 @@
                     class="d-flex transition-fast-in-fast-out v-card--reveal pa-3 font-bold about-text-aa bg-bgtext"
                     style="height: 100%"
                   >
-                    <p>
+                    <p class="fw-400 text-opacity-7">
                       Hello! My name is Amit Kumar Sahu. I'm software developer
                       based in of Chhattisgarh India. I enjoy creating things
                       that live on the internet. My interest in fullstack

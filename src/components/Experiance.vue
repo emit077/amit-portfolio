@@ -18,7 +18,7 @@
               class="org__img elevation-3"
             />
           </template>
-          <v-card class="elevation-5 px-5 py-3 bg-transparent experince-card">
+          <v-card class="elevation-5 px-5 py-3 experince-card">
             <h2 class="org_name">{{ item.org_name }}</h2>
             <h4 class="mb-0">
               {{ item.designation }} <small>({{ item.duration }})</small>
@@ -63,21 +63,8 @@
 }
 .experince-card {
   border-radius: 10px;
-}
-.experince-card:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  content: "";
-  display: block;
-  opacity: 0.2;
-  background-color: #fff;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 10px;
+  background-color: #ffffff1c;
+  color: #000;
 }
 </style>
 <style>

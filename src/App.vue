@@ -10,15 +10,7 @@
 
 <style lang="scss">
 @import url("@/assets/css/custom-animation.scss");
-.text-opacity-7 {
-  opacity: 0.8;
-}
-.fs-18 {
-  font-size: 18px !important;
-}
-.fs-16 {
-  font-size: 18px !important;
-}
+@import url("@/assets/css/style.scss");
 </style>
 
 <script>

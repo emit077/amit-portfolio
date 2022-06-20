@@ -151,10 +151,7 @@
         <div class="inner">
           <p>{{ project.title }}</p>
           <div style="overflow-wrap: anywhere">
-            <small
-              class="pr-2 text-opacity-8"
-              v-for="(tech, j) in project.tech_stack"
-              :key="j"
+            <small class="pr-2" v-for="(tech, j) in project.tech_stack" :key="j"
               >#{{ tech }}</small
             >
           </div>

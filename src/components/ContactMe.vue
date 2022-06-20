@@ -59,7 +59,7 @@
                     class="d-flex transition-fast-in-fast-out v-card--reveal pa-3 font-bold about-text-aa bg-bgtext"
                     style="height: 100%"
                   >
-                    <p class="text-center">
+                    <p class="fw-400 text-opacity-7 text-center">
                       Want to hire me? <br />
                       New project or opportunity?<br />
                       Got something you'd like to ask? Or just want to say
