@@ -3,7 +3,7 @@
   <!-- Sizes your content based upon application components -->
   <v-main color="background" class="custom-class">
     <!-- Provides the application the proper gutter -->
-    <v-container>
+    <v-container class="overflow-x-hidden">
       <div :class="$vuetify.display.mobile ? '' : 'px-15'">
         <landing-screen></landing-screen>
         <div v-for="(comp, i) in components_list" :key="i">

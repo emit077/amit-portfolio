@@ -49,12 +49,11 @@ export default {
         tech_stack: ["Django", "python", "Vuejs", "Vuetify", "HTML", "SCSS"],
       },
       {
-        title: "Invitation Panda",
+        title: "Wednicely",
         description:
-          "Invitation Panda is plateform where you can create a e-invitation card within few minutes. It has 1000+ temaplate and  10+ category  to choose from ",
+          "Wednicely Panda is plateform where you can create a e-invitation card within few minutes. It has 1000+ temaplate and  10+ category  to choose from ",
         image: require("@/assets/images/projects/ip.png"),
-        working_link: "https://invitationpanda.com",
-        gitnub_link: "https://invitationpanda.com",
+        working_link: "https://wednicely.com/",
         tech_stack: ["Vuejs", "Vuetify", "HTML", "CSS"],
       },
       {
