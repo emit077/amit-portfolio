@@ -52,6 +52,7 @@
         data-aos-duration="1000"
       />
     </div>
+    <BorderCircle v-if="!$vuetify.display.mobile" />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -107,12 +108,14 @@
 
 <script>
 import HeaderUnderLine from "@/components/helper-components/HeaderUnderLine.vue";
+import BorderCircle from "@/components/helper-components/BorderCircle.vue";
 // import LoaderCiercle from "@/components/helper-components/LoaderCiercle.vue";
 // import WatchCircle from "@/components/helper-components/WatchCircle.vue";
 export default {
   name: "LandingScreen",
   components: {
     HeaderUnderLine,
+    BorderCircle,
     //  LoaderCiercle,
     //  WatchCircle
   },

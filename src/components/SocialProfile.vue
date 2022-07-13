@@ -8,7 +8,7 @@
       data-aos-duration="500"
     >
       <a :href="item.link" target="_blank" class="">
-        <v-icon class="social-icon" size="32">{{ item.icon }}</v-icon>
+        <v-icon class="social-icon bg-bgtext" size="32">{{ item.icon }}</v-icon>
       </a>
     </div>
   </div>
@@ -17,18 +17,20 @@
 .social-contact-sec {
   position: fixed;
   background: transparent;
+  z-index: 10;
   top: 80px;
-  right: 40px;
+  right: 30px;
 
   .social-cont {
     background-color: transparent;
     border-radius: 10px;
-    border: solid 1.5px #ffffff;
+    border: solid 1.5px; // #ffffff;
     transition-duration: 1s;
   }
 
   .social-icon {
-    color: white;
+    background-color: transparent !important;
+    // color: white;
   }
 
   .social-cont:hover {

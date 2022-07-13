@@ -3,6 +3,7 @@
     <v-col
       cols="12"
       md="6"
+      xl="4"
       v-for="(project, i) in poject_list_data"
       :key="i"
       class="mb-4"

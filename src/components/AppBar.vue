@@ -1,7 +1,7 @@
 <template>
   <v-app-bar app elevation="0" fixed color="transparent">
     <v-spacer></v-spacer>
-    <v-btn icon @click="toggleThemeColor">
+    <v-btn icon @click="toggleThemeColor" class="mr-3">
       <p
         :title="
           active_theme == 'theme_dark'
@@ -9,7 +9,7 @@
             : 'Switch off lights'
         "
       >
-        <!-- <v-icon color="lightbulb"> mdi-lightbulb-on</v-icon> -->
+        <v-icon color="lightbulb"> mdi-lightbulb-on</v-icon>
       </p>
     </v-btn>
   </v-app-bar>

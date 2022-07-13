@@ -4,6 +4,7 @@
       <v-col
         cols="12"
         md="6"
+        xl="4"
         v-for="(service, i) in poject_list_data"
         :key="i"
         class="mb-12"
@@ -58,7 +59,7 @@ export default {
         tech_stack: ["Django", "python", "Vuejs", "Vuetify", "HTML", "SCSS"],
       },
       {
-        title: "Back-end Development",
+        title: "Backend Development",
         bg_color: "#69F0AE",
         icon: "mdi-tools",
         description:
